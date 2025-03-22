@@ -101,13 +101,30 @@
         I like to listen to songs a lot. Talk a little stupid but gonna enjoy >_<. GG<br><br>
         I play Minecraft a lot and my IGN is InfiniteVoidX.</p>
     </div>
- <div class="social-icons">
+    <div class="social-icons">
         <a href="https://www.youtube.com/@not_gaurang" target="_blank"><img src="logo-youtube-png-clipart-11-removebg-preview.png" alt="YouTube"></a>
         <a href="https://discord.com/" target="_blank"><img src="557717-removebg-preview.png" alt="Discord"></a>
-        <a href="https://mail.google.com/mail/?view=cm&to=notgaurang@gmail.com" target="_blank"><img src="google_mail_gmail_logo_icon_159346.webp" alt="Gmail"></a>
+        <a id="gmailLink" target="_blank"><img src="google_mail_gmail_logo_icon_159346.webp" alt="Gmail"></a>
         <a href="https://www.instagram.com/notgaurang_/" target="_blank"><img src="instagram-6338401_1280-removebg-preview.png" alt="Instagram"></a>
         <a href="https://github.com/NotGaurang" target="_blank"><img src="github_PNG28.png" alt="GitHub"></a>
     </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var isAndroid = /Android/i.test(navigator.userAgent);
+            var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            var gmailLink = document.getElementById("gmailLink");
+
+            if (isAndroid) {
+                gmailLink.href = "intent://compose?to=notgaurang@gmail.com#Intent;scheme=mailto;package=com.google.android.gm;end;";
+            } else if (isIOS) {
+                gmailLink.href = "mailto:notgaurang@gmail.com";
+            } else {
+                gmailLink.href = "https://mail.google.com/mail/u/0/?view=cm&fs=1&to=notgaurang@gmail.com";
+                gmailLink.setAttribute("target", "_blank"); // Open in new tab
+            }
+        });
+    </script>
 </body>
 </html>
 
