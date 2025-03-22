@@ -13,10 +13,16 @@
             color: white;
             text-align: center;
             font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
         .header img {
-            width: 150px;
-            height: 150px;
+            width: 20vw;
+            max-width: 150px;
+            height: auto;
             margin-top: 20px;
             animation: float 2s ease-in-out infinite;
         }
@@ -26,25 +32,54 @@
             100% { transform: translateY(0px); }
         }
         .info {
-            position: relative;
-            margin-top: 50px;
             background: rgba(0, 0, 0, 0.7);
             padding: 20px;
-            display: inline-block;
             border-radius: 10px;
+            width: 80vw;
+            max-width: 600px;
+            font-size: 1.2vw;
         }
         .social-icons {
             margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .social-icons img {
-            width: 55px;
-            height: 60px;
-            margin: 15px;
-            background: none;
+            width: 7vw;
+            max-width: 55px;
+            height: auto;
+            margin: 10px;
             animation: float 2s ease-in-out infinite;
         }
-        .social-icons a:first-child img { /* Targeting YouTube logo */
-            width: 75px;
+        .social-icons a:first-child img {
+            width: 8vw;
+            max-width: 75px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            body {
+                overflow-y: auto;
+                height: auto;
+                padding: 20px;
+            }
+            .info {
+                font-size: 4vw;
+                width: 90vw;
+            }
+            .social-icons img {
+                width: 12vw;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .info {
+                font-size: 1vw;
+            }
+            .social-icons img {
+                width: 5vw;
+            }
         }
     </style>
 </head>
